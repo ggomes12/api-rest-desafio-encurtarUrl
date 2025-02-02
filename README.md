@@ -20,7 +20,10 @@ The project follows a layered architecture pattern, ensuring modularity and sepa
 - **Data Transfer Objects (DTOs)**: Defines structured objects to encapsulate data being sent and received.
 - **Exception Handling Layer**: Centralized handling of application exceptions to ensure consistent error responses.
 
-<img src="images/diagrama.png" alt="Architecture Diagram" width="800"/>
+
+<div style="text-align: center;">
+    <img src="images/diagrama.png" alt="Architecture Diagram" width="400">
+</div>
 
 ---
 
@@ -36,9 +39,9 @@ The project follows a layered architecture pattern, ensuring modularity and sepa
 ---
 
 ## Project Structure
-
-<img src="images/estrutura.PNG" alt="Project Structure" width="600"/>
-
+<div style="text-align: center;">
+<img src="images/estrutura.PNG" alt="Project Structure" width="400"/>
+</div>
 ---
 
 ## API Endpoints
@@ -89,13 +92,13 @@ GET /url/{shortUrl}
 ```
 
 **Request - Using Postman**
-
-<img src="images/postman1.png" alt="post" width="800"/>
-
+<div style="text-align: center;">
+<img src="images/postman1.PNG" alt="post" width="800"/>
+</div>
 **Response - Using Postman**
-
-<img src="images/postman2.png" alt="get" width="800"/>
-
+<div style="text-align: center;">
+<img src="images/postman2.PNG" alt="get" width="800"/>
+</div>
 
 
 ---
@@ -125,7 +128,8 @@ The API documentation is available at:
 `http://localhost:8080/swagger-ui/index.html`
 
 <br>
-
+<div style="text-align: center;">
 <img src="images/swagger.PNG" alt="Swagger UI" width="800"/>
+</div>
 ```
 
