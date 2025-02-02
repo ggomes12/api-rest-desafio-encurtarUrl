@@ -14,9 +14,11 @@ import com.ggomes.api_desafio.exceptions.InvalidUrlException;
 import com.ggomes.api_desafio.repositories.UrlRepository;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class UrlService {
 	private final UrlRepository urlRepository;
 	private final Random random = new Random();
@@ -24,6 +26,7 @@ public class UrlService {
 	
 	public String shortenUrl(String originalUrl) {
 		if(!isValidUrl(originalUrl)) {
+			log.info("Invalid URL");
 			throw new InvalidUrlException("Invalid URL format.");
 		}
 		
@@ -41,6 +44,7 @@ public class UrlService {
 		
 		urlRepository.save(urlEntity);
 		
+		log.info("Shortened URL: {} -> {}", originalUrl, shortUrl);
 		return Base_URL + shortUrl;
 	}
 	
@@ -71,11 +75,11 @@ public class UrlService {
         Optional<UrlEntity> entity = urlRepository.findByShortUrl(shortUrl);
 
         if (entity.isEmpty() || entity.get().getExpirationDate().isBefore(LocalDateTime.now())) {
-
+        	log.info("Short URL not found or expired");
             throw new NoSuchElementException("Short URL not found or expired.");
         }
 
-
+        log.info("Original URL: {} -> {}", shortUrl, entity.get().getOriginalUrl());
         return entity.get().getOriginalUrl();
     }
 	
