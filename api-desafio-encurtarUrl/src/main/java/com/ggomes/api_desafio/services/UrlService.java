@@ -1,6 +1,7 @@
 package com.ggomes.api_desafio.services;
 
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.time.LocalDateTime;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -9,6 +10,7 @@ import java.util.Random;
 import org.springframework.stereotype.Service;
 
 import com.ggomes.api_desafio.entities.UrlEntity;
+import com.ggomes.api_desafio.exceptions.InvalidUrlException;
 import com.ggomes.api_desafio.repositories.UrlRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -22,7 +24,7 @@ public class UrlService {
 	
 	public String shortenUrl(String originalUrl) {
 		if(!isValidUrl(originalUrl)) {
-			throw new IllegalArgumentException("URL inválida");
+			throw new InvalidUrlException("Invalid URL format.");
 		}
 		
 		String shortUrl;
@@ -45,9 +47,9 @@ public class UrlService {
 	
 	private boolean isValidUrl(String url) {
 	    try {
-	        URI.create(url);
-	        return true;
-	    } catch (IllegalArgumentException e) {
+	        URI uri = new URI(url);
+	        return uri.getScheme() != null && (uri.getScheme().equals("http") || uri.getScheme().equals("https"));
+	    } catch (URISyntaxException e) {
 	        return false;
 	    }
 	}
@@ -70,7 +72,7 @@ public class UrlService {
 
         if (entity.isEmpty() || entity.get().getExpirationDate().isBefore(LocalDateTime.now())) {
 
-            throw new NoSuchElementException("URL não encontrada");
+            throw new NoSuchElementException("Short URL not found or expired.");
         }
 
 
