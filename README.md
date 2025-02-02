@@ -93,11 +93,11 @@ GET /url/{shortUrl}
 
 **Request - Using Postman**
 <div style="text-align: center;">
-<img src="images/postman1.PNG" alt="post" width="800"/>
+<img src="images/postman1.PNG" alt="post" width="500"/>
 </div>
 **Response - Using Postman**
 <div style="text-align: center;">
-<img src="images/postman2.PNG" alt="get" width="800"/>
+<img src="images/postman2.PNG" alt="get" width="500"/>
 </div>
 
 
@@ -129,7 +129,7 @@ The API documentation is available at:
 
 <br>
 <div style="text-align: center;">
-<img src="images/swagger.PNG" alt="Swagger UI" width="800"/>
+<img src="images/swagger.PNG" alt="Swagger UI" width="500"/>
 </div>
 ```
 
