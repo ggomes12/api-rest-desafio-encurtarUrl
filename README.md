@@ -21,9 +21,9 @@ The project follows a layered architecture pattern, ensuring modularity and sepa
 - **Exception Handling Layer**: Centralized handling of application exceptions to ensure consistent error responses.
 
 
-<div style="text-align: center;">
+
     <img src="images/diagrama.png" alt="Architecture Diagram" width="400">
-</div>
+
 
 ---
 
@@ -39,9 +39,9 @@ The project follows a layered architecture pattern, ensuring modularity and sepa
 ---
 
 ## Project Structure
-<div style="text-align: center;">
+
 <img src="images/estrutura.PNG" alt="Project Structure" width="400"/>
-</div>
+
 ---
 
 ## API Endpoints
@@ -92,13 +92,13 @@ GET /url/{shortUrl}
 ```
 
 **Request - Using Postman**
-<div style="text-align: center;">
+
 <img src="images/postman1.PNG" alt="post" width="500"/>
-</div>
+
 **Response - Using Postman**
-<div style="text-align: center;">
+
 <img src="images/postman2.PNG" alt="get" width="500"/>
-</div>
+
 
 
 ---
@@ -128,8 +128,8 @@ The API documentation is available at:
 `http://localhost:8080/swagger-ui/index.html`
 
 <br>
-<div style="text-align: center;">
+
 <img src="images/swagger.PNG" alt="Swagger UI" width="500"/>
-</div>
+
 ```
 
